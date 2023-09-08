@@ -9,10 +9,9 @@ N = Int(length(x));
 a = zeros((1,N));
 b = zeros((1,N));
 for n in 1:Fe/2
-    a[Int(n)] = sum(x.*cos.(2*pi*n*(N/Fe)*t))
-    b[Int(n)] = sum(x.*sin.(2*pi*n*(N/Fe)*t))
+    a[Int(n)] = sum(2*x.*cos.(2*pi*n*(N/Fe)*t))/N
+    b[Int(n)] = sum(2*x.*sin.(2*pi*n*(N/Fe)*t))/N
 end
 
 plot(transpose(a))
-plot(transpose(b))
 println("done")
